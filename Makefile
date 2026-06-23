@@ -1,3 +1,3 @@
 run:
 	git pull
-	python gcm.pyc
+	python gcm.py
