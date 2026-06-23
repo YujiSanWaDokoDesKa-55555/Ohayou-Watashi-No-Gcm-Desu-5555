@@ -7,7 +7,7 @@ import subprocess
 import atexit
 import select
 
-MIN_COLS = 63
+MIN_COLS = 65
 
 a = "\033[1;30m"
 m = "\033[1;31m"
