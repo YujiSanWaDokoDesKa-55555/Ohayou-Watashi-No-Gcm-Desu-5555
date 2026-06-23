@@ -1,6 +1,5 @@
 import os
 import sys
-import tty
 import time
 import termios
 import shutil
@@ -55,7 +54,9 @@ def check_for_updates():
 os.system("clear")
 
 try:
-    tty.setcbreak(fd)
+    new_settings = termios.tcgetattr(fd)
+    new_settings[3] = new_settings[3] & ~(termios.ECHO | termios.ICANON)
+    termios.tcsetattr(fd, termios.TCSADRAIN, new_settings)
     hide_cursor()
 
     last_status = None
