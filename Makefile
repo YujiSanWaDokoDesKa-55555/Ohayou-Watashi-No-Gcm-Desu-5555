@@ -1,3 +1,2 @@
 run:
-	git pull
-	python gcm.py
+	@python cl.py
